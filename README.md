@@ -39,12 +39,6 @@ $$\frac{D_{KL}(P_0 \| P_{fused})}{\sum_{k=1}^N D_{KL}(P_0 \| P_k)}$$
 └── visualizations/        # 可视化生成
 ```
 
-## 主要发现
-
-1. **实验验证**：在大量数值实验中，原不等式在所有测试情况下都成立
-2. **最优常数**：发现更紧的界限可能是 $D_{KL}(P_0 \| P_{fused}) \le N^{0.7} \sum_{k=1}^N D_{KL}(P_0 \| P_k)$
-3. **理论推导**：完成了从因果AI问题到纯代数不等式的完整数学抽象
-
 ## 快速开始
 
 ### 查看文档
@@ -52,8 +46,10 @@ $$\frac{D_{KL}(P_0 \| P_{fused})}{\sum_{k=1}^N D_{KL}(P_0 \| P_k)}$$
 访问 [在线文档](docs/) 或直接浏览：
 
 - [理论推导](docs/theory/causal_ai_to_algebraic_inequality.md)：从因果AI到代数不等式的完整推导
+- [从简单的一维两个领域融合情况出发](docs/theory/simple_case_algebraic_inequality.md)：从简单一维两个领域融合情况出发，推导出代数不等式
 - [实验结果](docs/experiments/experiment_results.md)：数值验证结果
-- [可视化展示](visualizations/)：各种参数条件下的结果可视化
+- [可视化展示](docs/visualizations/README.md)：各种参数条件下的结果可视化
+- [附录](docs/appendix/README.md)：附录材料
 
 ### 运行实验
 

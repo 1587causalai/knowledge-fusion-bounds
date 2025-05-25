@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <!-- KaTeX CSS -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+  <!-- GitHub Corners CSS -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-github-corners@1/dist/docsify-github-corners.min.css">
   <style>
     .markdown-section {
       max-width: 900px;
@@ -57,8 +59,15 @@
         successText: '已复制'
       },
       latex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        inlineMath: [['$', '$'], ['\(', '\)']],
+        displayMath: [['$$', '$$'], ['\[', '\]']]
+      },
+      // GitHub Corners Plugin Configuration
+      githubCorners: {
+        repo: 'YOUR_GITHUB_REPO_URL', // Replace with your GitHub repo URL
+        position: 'top-right',
+        color: '#42b983',
+        target: '_blank'
       }
     }
   </script>
@@ -76,5 +85,7 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+  <!-- GitHub Corners Plugin -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-github-corners@1/dist/docsify-github-corners.min.js"></script>
 </body>
 </html>
