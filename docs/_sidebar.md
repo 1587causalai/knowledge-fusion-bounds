@@ -3,7 +3,7 @@
   * [KL散度不等式分析](theory/kl_divergence_analysis.md)
   * [数学证明尝试](theory/mathematical_proof_attempt.md)
   * [从因果AI到代数不等式](theory/causal_ai_to_algebraic_inequality.md)
-  * [简化案例：代数不等式](theory/cauchy_kl_to_algebraic_inequality.md)
+  * [从简单的一维两个领域融合情况出发](theory/simple_case_algebraic_inequality.md)
 * [实验研究](experiments/README.md)
   * [实验设计与方法](experiments/experiment_design.md)
   * [实验结果分析](experiments/experiment_results.md)
