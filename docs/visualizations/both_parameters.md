@@ -8,19 +8,19 @@
 
 ### N=2 的情况
 
-![同向双参数扰动下不等式成立情况(N=2)](../visualizations/both_params_same_direction_N2.png)
+![同向双参数扰动下不等式成立情况(N=2)](../assets/both_params_same_direction_N2.png)
 
 ### N=3 的情况
 
-![同向双参数扰动下不等式成立情况(N=3)](../visualizations/both_params_same_direction_N3.png)
+![同向双参数扰动下不等式成立情况(N=3)](../assets/both_params_same_direction_N3.png)
 
 ### N=5 的情况
 
-![同向双参数扰动下不等式成立情况(N=5)](../visualizations/both_params_same_direction_N5.png)
+![同向双参数扰动下不等式成立情况(N=5)](../assets/both_params_same_direction_N5.png)
 
 ### N=10 的情况
 
-![同向双参数扰动下不等式成立情况(N=10)](../visualizations/both_params_same_direction_N10.png)
+![同向双参数扰动下不等式成立情况(N=10)](../assets/both_params_same_direction_N10.png)
 
 从热图可以看出，在所有测试的参数组合下，不等式都成立（值为1.00）。
 
@@ -30,19 +30,19 @@
 
 ### N=2 的情况
 
-![反向双参数扰动下不等式成立情况(N=2)](../visualizations/both_params_opposite_direction_N2.png)
+![反向双参数扰动下不等式成立情况(N=2)](../assets/both_params_opposite_direction_N2.png)
 
 ### N=3 的情况
 
-![反向双参数扰动下不等式成立情况(N=3)](../visualizations/both_params_opposite_direction_N3.png)
+![反向双参数扰动下不等式成立情况(N=3)](../assets/both_params_opposite_direction_N3.png)
 
 ### N=5 的情况
 
-![反向双参数扰动下不等式成立情况(N=5)](../visualizations/both_params_opposite_direction_N5.png)
+![反向双参数扰动下不等式成立情况(N=5)](../assets/both_params_opposite_direction_N5.png)
 
 ### N=10 的情况
 
-![反向双参数扰动下不等式成立情况(N=10)](../visualizations/both_params_opposite_direction_N10.png)
+![反向双参数扰动下不等式成立情况(N=10)](../assets/both_params_opposite_direction_N10.png)
 
 同样，在所有测试的参数组合下，不等式都成立。
 
@@ -50,7 +50,7 @@
 
 下图展示了不同N值和扰动模式下不等式成立的比例：
 
-![双参数扰动下不等式成立的比例](../visualizations/both_params_inequality_holds.png)
+![双参数扰动下不等式成立的比例](../assets/both_params_inequality_holds.png)
 
 从图中可以看出，在所有测试的N值和扰动模式下，不等式都成立（比例为1.00）。
 
@@ -58,7 +58,7 @@
 
 下图展示了不同N值和扰动模式下KL散度比率的分布：
 
-![双参数扰动下的KL散度比率](../visualizations/both_params_ratio_boxplot.png)
+![双参数扰动下的KL散度比率](../assets/both_params_ratio_boxplot.png)
 
 从图中可以观察到：
 - 所有比率都小于1，表明不等式在所有测试情况下都成立
