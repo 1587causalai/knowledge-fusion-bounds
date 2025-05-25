@@ -28,7 +28,7 @@
 2. 融合分布的KL散度始终小于不等式右侧的值
 3. 随着扰动分布数量N的增加，不等式右侧与左侧的差距越来越大
 
-![同向位置参数扰动下的KL散度比较](../visualizations/position_only_same_direction.png)
+![同向位置参数扰动下的KL散度比较](../assets/position_only_same_direction.png)
 
 ### 2.2 反向扰动
 
@@ -61,7 +61,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 2. 融合分布的KL散度始终小于不等式右侧的值
 3. 正向和负向的尺度参数扰动对KL散度的影响不对称
 
-![同向尺度参数扰动下的KL散度比较](../visualizations/scale_only_same_direction.png)
+![同向尺度参数扰动下的KL散度比较](../../visualizations/scale_only_same_direction.png)
 
 ### 3.2 反向扰动
 
@@ -70,7 +70,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 1. 融合分布的KL散度显著小于不等式右侧的值
 2. 尺度参数的反向扰动可能导致参数相互抵消，使融合分布的KL散度接近于零
 
-![反向尺度参数扰动下的KL散度比较](../visualizations/scale_only_opposite_direction.png)
+![反向尺度参数扰动下的KL散度比较](../../visualizations/scale_only_opposite_direction.png)
 
 ### 3.3 KL散度比率分析
 
@@ -80,7 +80,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 2. 随着N的增加，比率整体呈下降趋势
 3. 反向扰动下的比率通常小于同向扰动
 
-![尺度参数扰动下的KL散度比率](../visualizations/scale_only_ratio_boxplot.png)
+![尺度参数扰动下的KL散度比率](../../visualizations/scale_only_ratio_boxplot.png)
 
 ## 4. 双参数扰动实验结果
 
@@ -90,7 +90,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 对于N=2的情况，不同位置参数和尺度参数组合下的不等式成立情况如下：
 
-![同向双参数扰动下不等式成立情况(N=2)](../visualizations/both_params_same_direction_N2.png)
+![同向双参数扰动下不等式成立情况(N=2)](../../visualizations/both_params_same_direction_N2.png)
 
 从热图可以看出，在所有测试的参数组合下，不等式都成立（值为1.00）。
 
@@ -98,7 +98,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 对于N=2的情况，不同位置参数和尺度参数组合下的不等式成立情况如下：
 
-![反向双参数扰动下不等式成立情况(N=2)](../visualizations/both_params_opposite_direction_N2.png)
+![反向双参数扰动下不等式成立情况(N=2)](../../visualizations/both_params_opposite_direction_N2.png)
 
 同样，在所有测试的参数组合下，不等式都成立。
 
@@ -110,7 +110,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 2. 反向扰动下的比率通常小于同向扰动
 3. 随着N的增加，比率整体呈下降趋势
 
-![双参数扰动下的KL散度比率](../visualizations/both_params_ratio_boxplot.png)
+![双参数扰动下的KL散度比率](../../visualizations/both_params_ratio_boxplot.png)
 
 ## 5. 多维情况实验结果
 
@@ -120,7 +120,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 下图展示了不同维度d和扰动数量N下不等式成立的比例：
 
-![多维情况下不等式成立的比例](../visualizations/multivariate_inequality_holds.png)
+![多维情况下不等式成立的比例](../../visualizations/multivariate_inequality_holds.png)
 
 从热图可以看出，在所有测试的维度和扰动数量组合下，不等式都成立（值为1.00）。
 
@@ -132,13 +132,13 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 2. 随着维度d的增加，比率的分布更加集中
 3. 随着扰动数量N的增加，比率整体呈下降趋势
 
-![多维情况下的KL散度比率](../visualizations/multivariate_ratio_boxplot.png)
+![多维情况下的KL散度比率](../../visualizations/multivariate_ratio_boxplot.png)
 
 ### 5.3 KL散度散点图
 
 下图展示了融合分布KL散度与不等式右侧值的散点图：
 
-![KL散度比较散点图](../visualizations/multivariate_scatter.png)
+![KL散度比较散点图](../../visualizations/multivariate_scatter.png)
 
 所有点都位于对角线下方，表明不等式在所有测试情况下都成立。
 
@@ -150,7 +150,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 下图展示了极端位置参数值下的KL散度比较：
 
-![极端位置参数值下的KL散度比较](../visualizations/extreme_cases_position.png)
+![极端位置参数值下的KL散度比较](../../visualizations/extreme_cases_position.png)
 
 即使在位置参数取极大值的情况下，不等式仍然成立。
 
@@ -158,7 +158,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 下图展示了极端尺度参数值下的KL散度比较：
 
-![极端尺度参数值下的KL散度比较](../visualizations/extreme_cases_scale.png)
+![极端尺度参数值下的KL散度比较](../../visualizations/extreme_cases_scale.png)
 
 同样，在尺度参数取极大值的情况下，不等式也成立。
 
@@ -166,7 +166,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 极端情况下的不等式成立比例如下：
 
-![极端情况下不等式成立的比例](../visualizations/extreme_cases_inequality_holds.png)
+![极端情况下不等式成立的比例](../../visualizations/extreme_cases_inequality_holds.png)
 
 在所有测试的极端参数值下，不等式都成立。
 
@@ -178,7 +178,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 下图展示了不同维度d和扰动数量N下的最大比率：
 
-![不同维度d和扰动数量N下的最大比率](../visualizations/optimal_constant_max_ratio.png)
+![不同维度d和扰动数量N下的最大比率](../../visualizations/optimal_constant_max_ratio.png)
 
 从热图可以看出，最大比率随着N的增加而减小，这表明原不等式中的常数N可能不是最优的。
 
@@ -186,7 +186,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 下图展示了不同维度d和扰动数量N下的平均比率：
 
-![不同维度d和扰动数量N下的平均比率](../visualizations/optimal_constant_mean_ratio.png)
+![不同维度d和扰动数量N下的平均比率](../../visualizations/optimal_constant_mean_ratio.png)
 
 平均比率远小于1，表明不等式在大多数情况下都有较大的余量。
 

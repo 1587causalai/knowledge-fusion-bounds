@@ -33,43 +33,43 @@ def load_experiment_results():
     
     # Load experiment 1: Position parameter perturbations only
     try:
-        results['position_only'] = pd.read_csv('experiments/results/experiment_position_only.csv')
+        results['position_only'] = pd.read_csv('docs/experiments/results/experiment_position_only.csv')
     except FileNotFoundError:
         print("Warning: Position parameter perturbation experimental results file not found")
     
     # Load experiment 2: Scale parameter perturbations only
     try:
-        results['scale_only'] = pd.read_csv('experiments/results/experiment_scale_only.csv')
+        results['scale_only'] = pd.read_csv('docs/experiments/results/experiment_scale_only.csv')
     except FileNotFoundError:
         print("Warning: Scale parameter perturbation experimental results file not found")
     
     # Load experiment 3: Both position and scale parameter perturbations
     try:
-        results['both_params'] = pd.read_csv('experiments/results/experiment_both_params.csv')
+        results['both_params'] = pd.read_csv('docs/experiments/results/experiment_both_params.csv')
     except FileNotFoundError:
         print("Warning: Dual parameter perturbation experimental results file not found")
     
     # Load experiment 4: Multivariate case
     try:
-        results['multivariate'] = pd.read_csv('experiments/results/experiment_multivariate.csv')
+        results['multivariate'] = pd.read_csv('docs/experiments/results/experiment_multivariate.csv')
     except FileNotFoundError:
         print("Warning: Multivariate experimental results file not found")
     
     # Load experiment 5: Extreme cases
     try:
-        results['extreme_cases'] = pd.read_csv('experiments/results/experiment_extreme_cases.csv')
+        results['extreme_cases'] = pd.read_csv('docs/experiments/results/experiment_extreme_cases.csv')
     except FileNotFoundError:
         print("Warning: Extreme cases experimental results file not found")
     
     # Load experiment 6: Optimal constant
     try:
-        results['optimal_constant'] = pd.read_csv('experiments/results/experiment_optimal_constant.csv')
+        results['optimal_constant'] = pd.read_csv('docs/experiments/results/experiment_optimal_constant.csv')
     except FileNotFoundError:
         print("Warning: Optimal constant experimental results file not found")
     
     # Load summary results
     try:
-        with open('experiments/results/summary.json', 'r') as f:
+        with open('docs/experiments/results/summary.json', 'r') as f:
             results['summary'] = json.load(f)
     except FileNotFoundError:
         print("Warning: Summary results file not found")
@@ -586,7 +586,7 @@ def visualize_optimal_constant(df):
         'suggested_formula': f"C ≈ N^{max(popt_max[0], popt_p99[0]):.3f}"
     }
     
-    with open('experiments/results/optimal_constant_fit.json', 'w') as f:
+    with open('docs/experiments/results/optimal_constant_fit.json', 'w') as f:
         json.dump(fit_results, f, indent=4)
 
 def create_summary_tables():
@@ -672,7 +672,7 @@ def create_summary_tables():
     # Create summary table
     summary_df = pd.DataFrame(summary_data)
     if not summary_df.empty:
-        summary_df.to_csv('experiments/results/inequality_holds_summary.csv', index=False)
+        summary_df.to_csv('docs/experiments/results/inequality_holds_summary.csv', index=False)
         
         # Create HTML table
         html_table = summary_df.to_html(index=False)
@@ -691,7 +691,7 @@ def create_summary_tables():
             'mean_ratio': 'mean'
         }).reset_index()
         
-        optimal_by_n.to_csv('experiments/results/optimal_constant_by_N.csv', index=False)
+        optimal_by_n.to_csv('docs/experiments/results/optimal_constant_by_N.csv', index=False)
         
         # Create HTML table
         html_table = optimal_by_n.to_html(index=False)
@@ -720,7 +720,7 @@ def create_summary_tables():
     # Create counterexample table
     if counterexamples:
         counter_df = pd.DataFrame(counterexamples)
-        counter_df.to_csv('experiments/results/counterexamples.csv', index=False)
+        counter_df.to_csv('docs/experiments/results/counterexamples.csv', index=False)
         
         # Create HTML table
         html_table = counter_df.to_html(index=False)

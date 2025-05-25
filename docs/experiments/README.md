@@ -6,5 +6,5 @@
 
 ## 章节导航
 
-- [实验设计与方法](experiments/experiment_design.md)：详细介绍实验设计思路、方法和实现细节
-- [实验结果分析](experiments/experiment_results.md)：对实验结果进行系统分析和总结
+- [实验设计与方法](experiment_design.md)：详细介绍实验设计思路、方法和实现细节
+- [实验结果分析](experiment_results.md)：对实验结果进行系统分析和总结
