@@ -6,7 +6,7 @@
 
 当所有扰动分布的位置参数向同一方向调整时，KL散度的变化如下图所示：
 
-![同向位置参数扰动下的KL散度比较](../visualizations/position_only_same_direction.png)
+![同向位置参数扰动下的KL散度比较](../../visualizations/position_only_same_direction.png)
 
 从图中可以观察到：
 - KL散度随扰动大小的增加而增加
