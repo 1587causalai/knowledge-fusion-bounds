@@ -1,0 +1,8 @@
+实验类型,N,delta_mu,delta_s,pattern,kl_fused,right_side,ratio,extreme_value,param_type
+both_params,2,0.5,-0.5,same_direction,0.6683988383594293,0.6172588781347201,1.082850100721512,,
+both_params,3,0.5,-0.5,same_direction,1.434406893293085,1.3888324758031203,1.032814913449954,,
+extreme_cases,2,,,,,,inf,1000.0,scale
+extreme_cases,2,,,,,,inf,10000.0,scale
+extreme_cases,2,,,,,,inf,100000.0,scale
+extreme_cases,3,,,,,,inf,1000.0,scale
+extreme_cases,3,,,,,,inf,10000.0,scale
