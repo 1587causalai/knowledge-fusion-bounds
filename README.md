@@ -73,7 +73,14 @@ python visualizations/generate_plots.py
 
 ## 研究团队
 
-本项目由对因果人工智能充满热情的研究者发起，致力于推动AI理论的边界。
+**龚鹤扬 (Heyang Gong)**
+- 统计学博士，中国科学技术大学
+- 专注于因果机器学习、个性化决策与大语言模型对齐
+- 快手科技前算法工程师，上海芯梯科技创始人
+- 因果科学与CausalAI读书会发起人，凝聚超1000名深度参与者
+- 个人主页：https://1587causalai.github.io/
+
+本项目源于对因果人工智能的深度思考，致力于推动AI理论与实践的边界。
 
 ## 许可证
 
@@ -86,9 +93,9 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 ```bibtex
 @misc{knowledge-fusion-bounds,
   title={Knowledge Fusion Bounds: Theoretical Analysis of Cognitive Drift in Causal AI},
-  author={[Your Name]},
-  year={2024},
-  url={https://github.com/[username]/knowledge-fusion-bounds}
+  author={Heyang Gong},
+  year={2025},
+  url={https://github.com/1587causalai/knowledge-fusion-bounds}
 }
 ```
 
