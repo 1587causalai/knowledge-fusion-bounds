@@ -19,8 +19,8 @@ import json
 from tqdm import tqdm
 
 # 创建结果目录
-os.makedirs('../visualizations', exist_ok=True)
-os.makedirs('../experiments/results', exist_ok=True)
+# os.makedirs('../visualizations', exist_ok=True) # No longer needed here as generate_visualizations creates its own output dir
+os.makedirs('./results', exist_ok=True) # Results relative to this script's location
 
 def kl_divergence_cauchy(mu_0, gamma_0, mu, gamma):
     """
@@ -342,26 +342,29 @@ def experiment_multivariate(d_values, N_values, delta_mu_range, delta_s_range, n
     
     return pd.DataFrame(results)
 
-def experiment_extreme_cases(N_values, extreme_values):
+def experiment_extreme_cases(N_values, extreme_pos_values, extreme_log_scale_values):
     """
     实验5：极端情况测试
     
     参数:
     N_values: 扰动分布数量列表
-    extreme_values: 极端参数值列表
+    extreme_pos_values: 极端位置参数值列表
+    extreme_log_scale_values: 极端对数尺度参数值列表
     
     返回:
     结果数据框
     """
     results = []
     
-    for N, value in product(N_values, extreme_values):
-        # 极端位置参数，尺度参数正常
-        delta_mu_k = np.ones(N) * value
-        delta_s_k = np.zeros(N)
+    # 测试极端位置参数
+    for N, pos_value in product(N_values, extreme_pos_values):
+        # 极端位置参数，尺度参数正常 (log_scale = 0 => scale = 1)
+        delta_mu_k = np.ones(N) * pos_value
+        delta_s_k = np.zeros(N) 
         
         mu_fused = np.sum(delta_mu_k)
-        gamma_fused = np.exp(np.sum(delta_s_k))
+        # gamma_0 is 1, sum of log_scale_perturbations is 0, so gamma_fused is exp(0)*1 = 1
+        gamma_fused = 1.0 * np.exp(np.sum(delta_s_k))
         
         # 计算融合分布的KL散度
         kl_fused = kl_divergence_cauchy(0, 1, mu_fused, gamma_fused)
@@ -369,7 +372,8 @@ def experiment_extreme_cases(N_values, extreme_values):
         # 计算每个扰动分布的KL散度
         kl_sum = 0
         for k in range(N):
-            gamma_k = np.exp(delta_s_k[k])
+            # gamma_0 is 1, log_scale_perturbation is 0, so gamma_k is exp(0)*1 = 1
+            gamma_k = 1.0 * np.exp(delta_s_k[k])
             kl_sum += kl_divergence_cauchy(0, 1, delta_mu_k[k], gamma_k)
         
         # 计算不等式右侧
@@ -378,20 +382,23 @@ def experiment_extreme_cases(N_values, extreme_values):
         # 记录结果
         results.append({
             'N': N,
-            'extreme_value': value,
+            'extreme_value': pos_value,
             'param_type': 'position',
             'kl_fused': kl_fused,
             'right_side': right_side,
-            'ratio': kl_fused / right_side if right_side > 0 else float('inf'),
-            'inequality_holds': kl_fused <= right_side
+            'ratio': kl_fused / right_side if right_side != 0 and not np.isnan(right_side) else float('inf'),
+            'inequality_holds': kl_fused <= right_side if not (np.isnan(kl_fused) or np.isnan(right_side)) else False
         })
         
-        # 极端尺度参数，位置参数正常
+    # 测试极端尺度参数
+    for N, log_scale_value in product(N_values, extreme_log_scale_values):
+        # 极端尺度参数，位置参数正常 (mu = 0)
         delta_mu_k = np.zeros(N)
-        delta_s_k = np.ones(N) * value
+        delta_s_k = np.ones(N) * log_scale_value
         
         mu_fused = np.sum(delta_mu_k)
-        gamma_fused = np.exp(np.sum(delta_s_k))
+        # gamma_0 is 1
+        gamma_fused = 1.0 * np.exp(np.sum(delta_s_k))
         
         # 计算融合分布的KL散度
         kl_fused = kl_divergence_cauchy(0, 1, mu_fused, gamma_fused)
@@ -399,7 +406,8 @@ def experiment_extreme_cases(N_values, extreme_values):
         # 计算每个扰动分布的KL散度
         kl_sum = 0
         for k in range(N):
-            gamma_k = np.exp(delta_s_k[k])
+            # gamma_0 is 1
+            gamma_k = 1.0 * np.exp(delta_s_k[k])
             kl_sum += kl_divergence_cauchy(0, 1, delta_mu_k[k], gamma_k)
         
         # 计算不等式右侧
@@ -408,12 +416,12 @@ def experiment_extreme_cases(N_values, extreme_values):
         # 记录结果
         results.append({
             'N': N,
-            'extreme_value': value,
+            'extreme_value': log_scale_value,
             'param_type': 'scale',
             'kl_fused': kl_fused,
             'right_side': right_side,
-            'ratio': kl_fused / right_side if right_side > 0 else float('inf'),
-            'inequality_holds': kl_fused <= right_side
+            'ratio': kl_fused / right_side if right_side != 0 and not np.isnan(right_side) else float('inf'),
+            'inequality_holds': kl_fused <= right_side if not (np.isnan(kl_fused) or np.isnan(right_side)) else False
         })
     
     return pd.DataFrame(results)
@@ -492,37 +500,41 @@ def run_all_experiments():
     delta_mu_values = [0.1, 0.5, 1, 2, 5, 10, 50, 100]
     delta_s_values = [-2, -1, -0.5, 0.5, 1, 2]
     d_values = [1, 2, 5, 10]
-    extreme_values = [1e2, 1e3, 1e4, 1e5]
+    extreme_pos_values = [1e2, 1e3, 1e4, 1e5] # Extreme position values
+    # To avoid (exp(N*val))^2 overflow, we need 2*N*log_scale_value < 700
+    # With N_max=10, this means 2*10*log_scale_max < 700, so log_scale_max < 35
+    # For safety, let's use log_scale_max = 30, giving us 2*10*30 = 600 < 700
+    extreme_log_scale_values = [5.0, 10.0, 20.0, 30.0] 
     
     # 实验1：仅位置参数扰动
     print("运行实验1：仅位置参数扰动...")
     df_pos = experiment_1d_position_only(N_values, delta_mu_values)
-    df_pos.to_csv('../experiments/results/experiment_position_only.csv', index=False)
+    df_pos.to_csv('./results/experiment_position_only.csv', index=False)
     
     # 实验2：仅尺度参数扰动
     print("运行实验2：仅尺度参数扰动...")
     df_scale = experiment_1d_scale_only(N_values, delta_s_values)
-    df_scale.to_csv('../experiments/results/experiment_scale_only.csv', index=False)
+    df_scale.to_csv('./results/experiment_scale_only.csv', index=False)
     
     # 实验3：同时考虑位置和尺度参数扰动
     print("运行实验3：同时考虑位置和尺度参数扰动...")
     df_both = experiment_1d_both_params(N_values, delta_mu_values[:4], delta_s_values)
-    df_both.to_csv('../experiments/results/experiment_both_params.csv', index=False)
+    df_both.to_csv('./results/experiment_both_params.csv', index=False)
     
     # 实验4：多维情况
     print("运行实验4：多维情况下的随机参数实验...")
     df_multi = experiment_multivariate(d_values, N_values[:3], (-5, 5), (-1, 1), num_trials=50)
-    df_multi.to_csv('../experiments/results/experiment_multivariate.csv', index=False)
+    df_multi.to_csv('./results/experiment_multivariate.csv', index=False)
     
     # 实验5：极端情况
     print("运行实验5：极端情况测试...")
-    df_extreme = experiment_extreme_cases(N_values, extreme_values)
-    df_extreme.to_csv('../experiments/results/experiment_extreme_cases.csv', index=False)
+    df_extreme = experiment_extreme_cases(N_values, extreme_pos_values, extreme_log_scale_values)
+    df_extreme.to_csv('./results/experiment_extreme_cases.csv', index=False)
     
     # 实验6：寻找最优常数
     print("运行实验6：寻找最优常数C...")
     df_optimal = experiment_optimal_constant(d_values, N_values, (-5, 5), (-1, 1), num_trials=50)
-    df_optimal.to_csv('../experiments/results/experiment_optimal_constant.csv', index=False)
+    df_optimal.to_csv('./results/experiment_optimal_constant.csv', index=False)
     
     # 汇总结果
     summary = {
@@ -533,10 +545,10 @@ def run_all_experiments():
         'extreme_cases': df_extreme['inequality_holds'].mean()
     }
     
-    with open('../experiments/results/summary.json', 'w') as f:
+    with open('./results/summary.json', 'w') as f:
         json.dump(summary, f, indent=4)
     
-    print("所有实验完成，结果已保存到 ../experiments/results/ 目录")
+    print("所有实验完成，结果已保存到 ./results/ 目录")
     
     return {
         'position_only': df_pos,

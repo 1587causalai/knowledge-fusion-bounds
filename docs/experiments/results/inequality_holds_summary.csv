@@ -36,10 +36,10 @@ Multivariate (d=10),2,random,1.0,50
 Multivariate (d=10),3,random,1.0,50
 Multivariate (d=10),5,random,1.0,50
 Extreme Cases (position),2,extreme,1.0,4
-Extreme Cases (scale),2,extreme,0.25,4
+Extreme Cases (scale),2,extreme,1.0,4
 Extreme Cases (position),3,extreme,1.0,4
-Extreme Cases (scale),3,extreme,0.25,4
+Extreme Cases (scale),3,extreme,1.0,4
 Extreme Cases (position),5,extreme,1.0,4
-Extreme Cases (scale),5,extreme,0.0,4
+Extreme Cases (scale),5,extreme,1.0,4
 Extreme Cases (position),10,extreme,1.0,4
-Extreme Cases (scale),10,extreme,0.0,4
+Extreme Cases (scale),10,extreme,1.0,4

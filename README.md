@@ -59,7 +59,7 @@ pip install -r requirements.txt
 python experiments/kl_divergence_experiments.py
 
 # 生成可视化
-python visualizations/generate_plots.py
+python docs/assets/generate_visualizations.py
 ```
 
 ## 贡献指南

@@ -15,12 +15,17 @@ import os
 import json
 from matplotlib.colors import LinearSegmentedColormap
 
+# Get the directory where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
 # Set matplotlib style
 plt.style.use('default')
 plt.rcParams['axes.unicode_minus'] = False  # Fix minus sign display
 
 # Create results directory
-os.makedirs('docs/assets', exist_ok=True)
+assets_dir = os.path.join(script_dir, '..', 'assets')
+results_dir = os.path.join(script_dir, 'results')
+os.makedirs(assets_dir, exist_ok=True)
 
 def load_experiment_results():
     """
@@ -33,43 +38,43 @@ def load_experiment_results():
     
     # Load experiment 1: Position parameter perturbations only
     try:
-        results['position_only'] = pd.read_csv('docs/experiments/results/experiment_position_only.csv')
+        results['position_only'] = pd.read_csv(os.path.join(results_dir, 'experiment_position_only.csv'))
     except FileNotFoundError:
         print("Warning: Position parameter perturbation experimental results file not found")
     
     # Load experiment 2: Scale parameter perturbations only
     try:
-        results['scale_only'] = pd.read_csv('docs/experiments/results/experiment_scale_only.csv')
+        results['scale_only'] = pd.read_csv(os.path.join(results_dir, 'experiment_scale_only.csv'))
     except FileNotFoundError:
         print("Warning: Scale parameter perturbation experimental results file not found")
     
     # Load experiment 3: Both position and scale parameter perturbations
     try:
-        results['both_params'] = pd.read_csv('docs/experiments/results/experiment_both_params.csv')
+        results['both_params'] = pd.read_csv(os.path.join(results_dir, 'experiment_both_params.csv'))
     except FileNotFoundError:
         print("Warning: Dual parameter perturbation experimental results file not found")
     
     # Load experiment 4: Multivariate case
     try:
-        results['multivariate'] = pd.read_csv('docs/experiments/results/experiment_multivariate.csv')
+        results['multivariate'] = pd.read_csv(os.path.join(results_dir, 'experiment_multivariate.csv'))
     except FileNotFoundError:
         print("Warning: Multivariate experimental results file not found")
     
     # Load experiment 5: Extreme cases
     try:
-        results['extreme_cases'] = pd.read_csv('docs/experiments/results/experiment_extreme_cases.csv')
+        results['extreme_cases'] = pd.read_csv(os.path.join(results_dir, 'experiment_extreme_cases.csv'))
     except FileNotFoundError:
         print("Warning: Extreme cases experimental results file not found")
     
     # Load experiment 6: Optimal constant
     try:
-        results['optimal_constant'] = pd.read_csv('docs/experiments/results/experiment_optimal_constant.csv')
+        results['optimal_constant'] = pd.read_csv(os.path.join(results_dir, 'experiment_optimal_constant.csv'))
     except FileNotFoundError:
         print("Warning: Optimal constant experimental results file not found")
     
     # Load summary results
     try:
-        with open('docs/experiments/results/summary.json', 'r') as f:
+        with open(os.path.join(results_dir, 'summary.json'), 'r') as f:
             results['summary'] = json.load(f)
     except FileNotFoundError:
         print("Warning: Summary results file not found")
@@ -103,7 +108,7 @@ def visualize_position_only(df):
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig('docs/assets/position_only_same_direction.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'position_only_same_direction.png'), dpi=300)
     plt.close()
     
     # Figure 2: KL divergence comparison under opposite-direction perturbations
@@ -123,7 +128,7 @@ def visualize_position_only(df):
         plt.legend()
         plt.grid(True, alpha=0.3)
         plt.tight_layout()
-        plt.savefig('docs/assets/position_only_opposite_direction.png', dpi=300)
+        plt.savefig(os.path.join(assets_dir, 'position_only_opposite_direction.png'), dpi=300)
         plt.close()
     
     # Figure 3: Inequality satisfaction rate
@@ -143,7 +148,7 @@ def visualize_position_only(df):
         ax.bar_label(container, fmt='%.2f')
     
     plt.tight_layout()
-    plt.savefig('docs/assets/position_only_inequality_holds.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'position_only_inequality_holds.png'), dpi=300)
     plt.close()
     
     # Figure 4: KL divergence ratio distribution
@@ -155,7 +160,7 @@ def visualize_position_only(df):
     plt.title('KL Divergence Ratio Distribution by N and Perturbation Pattern')
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig('docs/assets/position_only_ratio_boxplot.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'position_only_ratio_boxplot.png'), dpi=300)
     plt.close()
 
 def visualize_scale_only(df):
@@ -183,7 +188,7 @@ def visualize_scale_only(df):
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig('docs/assets/scale_only_same_direction.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'scale_only_same_direction.png'), dpi=300)
     plt.close()
     
     # Figure 2: KL divergence comparison under opposite-direction perturbations
@@ -201,7 +206,7 @@ def visualize_scale_only(df):
         plt.legend()
         plt.grid(True, alpha=0.3)
         plt.tight_layout()
-        plt.savefig('docs/assets/scale_only_opposite_direction.png', dpi=300)
+        plt.savefig(os.path.join(assets_dir, 'scale_only_opposite_direction.png'), dpi=300)
         plt.close()
     
     # Figure 3: Inequality satisfaction rate
@@ -221,7 +226,7 @@ def visualize_scale_only(df):
         ax.bar_label(container, fmt='%.2f')
     
     plt.tight_layout()
-    plt.savefig('docs/assets/scale_only_inequality_holds.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'scale_only_inequality_holds.png'), dpi=300)
     plt.close()
     
     # Figure 4: KL divergence ratio distribution
@@ -233,7 +238,7 @@ def visualize_scale_only(df):
     plt.title('KL Divergence Ratio Distribution by N and Perturbation Pattern')
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig('docs/assets/scale_only_ratio_boxplot.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'scale_only_ratio_boxplot.png'), dpi=300)
     plt.close()
 
 def visualize_both_params(df):
@@ -268,7 +273,7 @@ def visualize_both_params(df):
             plt.xlabel('Log Scale Parameter Perturbation (delta_s)')
             plt.ylabel('Position Parameter Perturbation (delta_mu)')
             plt.tight_layout()
-            plt.savefig(f'docs/assets/both_params_same_direction_N{n}.png', dpi=300)
+            plt.savefig(os.path.join(assets_dir, f'both_params_same_direction_N{n}.png'), dpi=300)
             plt.close()
     
     # Figure 2: Inequality satisfaction heatmap under opposite-direction perturbations for different delta_mu and delta_s combinations
@@ -294,7 +299,7 @@ def visualize_both_params(df):
             plt.xlabel('Log Scale Parameter Perturbation (delta_s)')
             plt.ylabel('Position Parameter Perturbation (delta_mu)')
             plt.tight_layout()
-            plt.savefig(f'docs/assets/both_params_opposite_direction_N{n}.png', dpi=300)
+            plt.savefig(os.path.join(assets_dir, f'both_params_opposite_direction_N{n}.png'), dpi=300)
             plt.close()
     
     # Figure 3: KL divergence ratio distribution for different N values
@@ -306,7 +311,7 @@ def visualize_both_params(df):
     plt.title('KL Divergence Ratio Distribution by N and Perturbation Pattern')
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig('docs/assets/both_params_ratio_boxplot.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'both_params_ratio_boxplot.png'), dpi=300)
     plt.close()
     
     # Figure 4: Inequality satisfaction rate for different N values
@@ -326,7 +331,7 @@ def visualize_both_params(df):
         ax.bar_label(container, fmt='%.2f')
     
     plt.tight_layout()
-    plt.savefig('docs/assets/both_params_inequality_holds.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'both_params_inequality_holds.png'), dpi=300)
     plt.close()
 
 def visualize_multivariate(df):
@@ -350,7 +355,7 @@ def visualize_multivariate(df):
     plt.xlabel('Number of Perturbation Distributions (N)')
     plt.ylabel('Dimension (d)')
     plt.tight_layout()
-    plt.savefig('docs/assets/multivariate_inequality_holds.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'multivariate_inequality_holds.png'), dpi=300)
     plt.close()
     
     # Figure 2: KL divergence ratio boxplot for different dimensions d and perturbation numbers N
@@ -371,7 +376,7 @@ def visualize_multivariate(df):
     
     axes[-1].set_xlabel('Number of Perturbation Distributions (N)')
     plt.tight_layout()
-    plt.savefig('docs/assets/multivariate_ratio_boxplot.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'multivariate_ratio_boxplot.png'), dpi=300)
     plt.close()
     
     # Figure 3: KL divergence ratio scatter plot
@@ -391,7 +396,7 @@ def visualize_multivariate(df):
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig('docs/assets/multivariate_scatter.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'multivariate_scatter.png'), dpi=300)
     plt.close()
 
 def visualize_extreme_cases(df):
@@ -422,7 +427,7 @@ def visualize_extreme_cases(df):
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig('docs/assets/extreme_cases_position.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'extreme_cases_position.png'), dpi=300)
     plt.close()
     
     # Figure 2: KL divergence comparison under extreme values (scale parameters)
@@ -442,7 +447,7 @@ def visualize_extreme_cases(df):
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig('docs/assets/extreme_cases_scale.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'extreme_cases_scale.png'), dpi=300)
     plt.close()
     
     # Figure 3: Inequality satisfaction status
@@ -462,7 +467,7 @@ def visualize_extreme_cases(df):
         ax.bar_label(container, fmt='%.2f')
     
     plt.tight_layout()
-    plt.savefig('docs/assets/extreme_cases_inequality_holds.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'extreme_cases_inequality_holds.png'), dpi=300)
     plt.close()
     
     # Figure 4: KL divergence ratio
@@ -474,7 +479,7 @@ def visualize_extreme_cases(df):
     plt.title('KL Divergence Ratio Distribution by N and Parameter Type')
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig('docs/assets/extreme_cases_ratio_boxplot.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'extreme_cases_ratio_boxplot.png'), dpi=300)
     plt.close()
 
 def visualize_optimal_constant(df):
@@ -497,7 +502,7 @@ def visualize_optimal_constant(df):
     plt.xlabel('Number of Perturbation Distributions (N)')
     plt.ylabel('Dimension (d)')
     plt.tight_layout()
-    plt.savefig('docs/assets/optimal_constant_max_ratio.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'optimal_constant_max_ratio.png'), dpi=300)
     plt.close()
     
     # Figure 2: Average ratio for different dimensions d and perturbation numbers N
@@ -509,7 +514,7 @@ def visualize_optimal_constant(df):
     plt.xlabel('Number of Perturbation Distributions (N)')
     plt.ylabel('Dimension (d)')
     plt.tight_layout()
-    plt.savefig('docs/assets/optimal_constant_mean_ratio.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'optimal_constant_mean_ratio.png'), dpi=300)
     plt.close()
     
     # Figure 3: 95th percentile ratio for different dimensions d and perturbation numbers N
@@ -521,7 +526,7 @@ def visualize_optimal_constant(df):
     plt.xlabel('Number of Perturbation Distributions (N)')
     plt.ylabel('Dimension (d)')
     plt.tight_layout()
-    plt.savefig('docs/assets/optimal_constant_p95_ratio.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'optimal_constant_p95_ratio.png'), dpi=300)
     plt.close()
     
     # Figure 4: Relationship between ratio and N
@@ -539,7 +544,7 @@ def visualize_optimal_constant(df):
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig('docs/assets/optimal_constant_ratio_vs_N.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'optimal_constant_ratio_vs_N.png'), dpi=300)
     plt.close()
     
     # Figure 5: Optimal constant C estimation
@@ -576,7 +581,7 @@ def visualize_optimal_constant(df):
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig('docs/assets/optimal_constant_estimation.png', dpi=300)
+    plt.savefig(os.path.join(assets_dir, 'optimal_constant_estimation.png'), dpi=300)
     plt.close()
     
     # Save fitting results
@@ -586,7 +591,7 @@ def visualize_optimal_constant(df):
         'suggested_formula': f"C ≈ N^{max(popt_max[0], popt_p99[0]):.3f}"
     }
     
-    with open('docs/experiments/results/optimal_constant_fit.json', 'w') as f:
+    with open(os.path.join(results_dir, 'optimal_constant_fit.json'), 'w') as f:
         json.dump(fit_results, f, indent=4)
 
 def create_summary_tables():
@@ -672,11 +677,11 @@ def create_summary_tables():
     # Create summary table
     summary_df = pd.DataFrame(summary_data)
     if not summary_df.empty:
-        summary_df.to_csv('docs/experiments/results/inequality_holds_summary.csv', index=False)
+        summary_df.to_csv(os.path.join(results_dir, 'inequality_holds_summary.csv'), index=False)
         
         # Create HTML table
         html_table = summary_df.to_html(index=False)
-        with open('docs/assets/inequality_holds_summary.html', 'w') as f:
+        with open(os.path.join(assets_dir, 'inequality_holds_summary.html'), 'w') as f:
             f.write(html_table)
     
     # Table 2: Optimal constant C estimation
@@ -691,11 +696,11 @@ def create_summary_tables():
             'mean_ratio': 'mean'
         }).reset_index()
         
-        optimal_by_n.to_csv('docs/experiments/results/optimal_constant_by_N.csv', index=False)
+        optimal_by_n.to_csv(os.path.join(results_dir, 'optimal_constant_by_N.csv'), index=False)
         
         # Create HTML table
         html_table = optimal_by_n.to_html(index=False)
-        with open('docs/assets/optimal_constant_by_N.html', 'w') as f:
+        with open(os.path.join(assets_dir, 'optimal_constant_by_N.html'), 'w') as f:
             f.write(html_table)
     
     # Table 3: Counterexample cases summary
@@ -720,11 +725,11 @@ def create_summary_tables():
     # Create counterexample table
     if counterexamples:
         counter_df = pd.DataFrame(counterexamples)
-        counter_df.to_csv('docs/experiments/results/counterexamples.csv', index=False)
+        counter_df.to_csv(os.path.join(results_dir, 'counterexamples.csv'), index=False)
         
         # Create HTML table
         html_table = counter_df.to_html(index=False)
-        with open('docs/assets/counterexamples.html', 'w') as f:
+        with open(os.path.join(assets_dir, 'counterexamples.html'), 'w') as f:
             f.write(html_table)
 
 def run_all_visualizations():

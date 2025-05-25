@@ -1,2 +1,0 @@
-# visualizations/position_parameter
-
