@@ -47,7 +47,7 @@ $$D_{KL}(P_0 \| P_{fused}) \le N \sum_{k=1}^N D_{KL}(P_0 \| P_k)$$
 
 - [理论推导](docs/theory/causal_ai_to_algebraic_inequality.md)：从因果AI到代数不等式的完整推导
 - [实验结果](docs/experiments/experiment_results.md)：数值验证结果
-- [可视化展示](docs/visualizations/)：各种参数条件下的结果可视化
+- [可视化展示](visualizations/)：各种参数条件下的结果可视化
 
 ### 运行实验
 
@@ -56,7 +56,7 @@ $$D_{KL}(P_0 \| P_{fused}) \le N \sum_{k=1}^N D_{KL}(P_0 \| P_k)$$
 pip install -r requirements.txt
 
 # 运行基础实验
-python experiments/basic_kl_experiment.py
+python experiments/kl_divergence_experiments.py
 
 # 生成可视化
 python visualizations/generate_plots.py
