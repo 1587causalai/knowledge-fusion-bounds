@@ -36,7 +36,7 @@ python generate_visualizations.py
 在 `docs/visualizations/` 目录下的Markdown文档中，使用相对路径引用图片：
 
 ```markdown
-![图片描述](../assets/图片文件名.png)
+![图片描述](docs/assets/图片文件名.png)
 ```
 
 ## 文件职责分离

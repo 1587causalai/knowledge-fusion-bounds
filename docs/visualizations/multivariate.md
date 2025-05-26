@@ -6,7 +6,7 @@
 
 下图展示了不同维度d和扰动数量N下不等式成立的比例：
 
-![多维情况下不等式成立的比例](../assets/multivariate_inequality_holds.png)
+![多维情况下不等式成立的比例](docs/assets/multivariate_inequality_holds.png)
 
 从热图可以看出，在所有测试的维度和扰动数量组合下，不等式都成立（值为1.00）。
 
@@ -14,7 +14,7 @@
 
 下图展示了不同维度d下KL散度比率随扰动数量N变化的箱线图：
 
-![多维情况下的KL散度比率](../assets/multivariate_ratio_boxplot.png)
+![多维情况下的KL散度比率](docs/assets/multivariate_ratio_boxplot.png)
 
 从图中可以观察到：
 - 所有比率都小于1，表明不等式在所有测试情况下都成立
@@ -25,7 +25,7 @@
 
 下图展示了融合分布KL散度与不等式右侧值的散点图：
 
-![KL散度比较散点图](../assets/multivariate_scatter.png)
+![KL散度比较散点图](docs/assets/multivariate_scatter.png)
 
 从图中可以观察到：
 - 所有点都位于对角线下方，表明不等式在所有测试情况下都成立
