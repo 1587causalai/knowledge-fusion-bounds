@@ -30,7 +30,7 @@ $$D_{KL}(P_0 \| P_{fused}) \le N \sum_{k=1}^N D_{KL}(P_0 \| P_k)$$
 
 **结论**：这些"极端反例"实际上是数值误差，修正后不等式在极端情况下成立
 
-![极端情况测试结果](docs/assets/extreme_cases_inequality_holds.png)
+<img src="docs/assets/extreme_cases_inequality_holds.png" alt="极端情况测试结果" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ### 2.3 真正反例的发现和验证
 
@@ -40,7 +40,7 @@ $$D_{KL}(P_0 \| P_{fused}) \le N \sum_{k=1}^N D_{KL}(P_0 \| P_k)$$
 
 **验证脚本**：`debug_both_params.py` 和 `analyze_counterexample.py`
 
-![双参数扰动不等式成立情况](docs/assets/both_params_inequality_holds.png)
+<img src="docs/assets/both_params_inequality_holds.png" alt="双参数扰动不等式成立情况" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 **反例机制**：
 1. **个体效应**：`delta_s < 0` 使每个扰动分布的尺度变小，相对基准分布的KL散度较小
@@ -57,9 +57,9 @@ $$D_{KL}(P_0 \| P_{fused}) \le N \sum_{k=1}^N D_{KL}(P_0 \| P_k)$$
 
 **结论**：反例不是孤立现象，而是在特定参数区域系统性出现
 
-![双参数扰动比率分布](docs/assets/both_params_ratio_boxplot.png)
+<img src="docs/assets/both_params_ratio_boxplot.png" alt="双参数扰动比率分布" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
-![反例深度分析](results/counterexample_analysis.png)
+<img src="results/counterexample_analysis.png" alt="反例深度分析" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 
 ### 2.5 理论边界分析 (`boundary_analysis.py`)
@@ -74,7 +74,7 @@ $$D_{KL}(P_0 \| P_{fused}) \le N \sum_{k=1}^N D_{KL}(P_0 \| P_k)$$
 - $\delta_s \to 0$: 边界在 $\delta_\mu/\gamma_0 = 2\sqrt{2} \approx 2.828$
 - $\delta_s \to -\infty$: 边界趋向 $\delta_\mu/\gamma_0 \approx 3.769$
 
-![边界深度分析](results/counterexample_boundary_deep_dive.png)
+<img src="results/counterexample_boundary_deep_dive.png" alt="边界深度分析" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ### 2.6 系数鲁棒性测试 (`test_new_coefficients.py`)
 
@@ -90,7 +90,7 @@ $$D_{KL}(P_0 \| P_{fused}) \le N \sum_{k=1}^N D_{KL}(P_0 \| P_k)$$
 - 系数N²：100%成立，无反例
 - 系数e^N：100%成立，无反例
 
-![系数比较结果](results/coefficient_comparison.png)
+<img src="results/coefficient_comparison.png" alt="系数比较结果" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ## 3. 最优系数C(N)的确定
 
@@ -136,7 +136,7 @@ $$D_{KL}(P_0 \| P_{fused}) \le C(N) \sum_{k=1}^N D_{KL}(P_0 \| P_k)$$
 - $C(N) \le N^2$：**有效**（非常宽松的上界）
 - $C(N) \le e^N$：**有效**（极其宽松的上界）
 
-![最优系数C(N)分析](results/optimal_coefficient_analysis.png)
+<img src="results/optimal_coefficient_analysis.png" alt="最优系数C(N)分析" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ### 3.2 有界性验证 (`test_boundedness.py`)
 
@@ -173,7 +173,7 @@ $$D_{KL}(P_0 \| P_{fused}) \le C(N) \sum_{k=1}^N D_{KL}(P_0 \| P_k)$$
 - 全局标准差：0.887
 - 变异系数：0.721
 
-![有界性分析](results/boundedness_analysis.png)
+<img src="results/boundedness_analysis.png" alt="有界性分析" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ## 4. 关键发现总结
 

@@ -8,19 +8,19 @@
 
 ### N=2 的情况
 
-![同向双参数扰动下不等式成立情况(N=2)](docs/assets/both_params_same_direction_N2.png)
+<img src="../assets/both_params_same_direction_N2.png" alt="同向双参数扰动下不等式成立情况(N=2)" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ### N=3 的情况
 
-![同向双参数扰动下不等式成立情况(N=3)](docs/assets/both_params_same_direction_N3.png)
+<img src="../assets/both_params_same_direction_N3.png" alt="同向双参数扰动下不等式成立情况(N=3)" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ### N=5 的情况
 
-![同向双参数扰动下不等式成立情况(N=5)](docs/assets/both_params_same_direction_N5.png)
+<img src="../assets/both_params_same_direction_N5.png" alt="同向双参数扰动下不等式成立情况(N=5)" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ### N=10 的情况
 
-![同向双参数扰动下不等式成立情况(N=10)](docs/assets/both_params_same_direction_N10.png)
+<img src="../assets/both_params_same_direction_N10.png" alt="同向双参数扰动下不等式成立情况(N=10)" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 从热图可以看出，在所有测试的参数组合下，不等式都成立（值为1.00）。
 
@@ -30,19 +30,19 @@
 
 ### N=2 的情况
 
-![反向双参数扰动下不等式成立情况(N=2)](docs/assets/both_params_opposite_direction_N2.png)
+<img src="../assets/both_params_opposite_direction_N2.png" alt="反向双参数扰动下不等式成立情况(N=2)" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ### N=3 的情况
 
-![反向双参数扰动下不等式成立情况(N=3)](docs/assets/both_params_opposite_direction_N3.png)
+<img src="../assets/both_params_opposite_direction_N3.png" alt="反向双参数扰动下不等式成立情况(N=3)" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ### N=5 的情况
 
-![反向双参数扰动下不等式成立情况(N=5)](docs/assets/both_params_opposite_direction_N5.png)
+<img src="../assets/both_params_opposite_direction_N5.png" alt="反向双参数扰动下不等式成立情况(N=5)" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ### N=10 的情况
 
-![反向双参数扰动下不等式成立情况(N=10)](docs/assets/both_params_opposite_direction_N10.png)
+<img src="../assets/both_params_opposite_direction_N10.png" alt="反向双参数扰动下不等式成立情况(N=10)" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 同样，在所有测试的参数组合下，不等式都成立。
 
@@ -50,7 +50,7 @@
 
 下图展示了不同N值和扰动模式下不等式成立的比例：
 
-![双参数扰动下不等式成立的比例](docs/assets/both_params_inequality_holds.png)
+<img src="../assets/both_params_inequality_holds.png" alt="双参数扰动下不等式成立的比例" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 从图中可以看出，在所有测试的N值和扰动模式下，不等式都成立（比例为1.00）。
 
@@ -58,7 +58,7 @@
 
 下图展示了不同N值和扰动模式下KL散度比率的分布：
 
-![双参数扰动下的KL散度比率](docs/assets/both_params_ratio_boxplot.png)
+<img src="../assets/both_params_ratio_boxplot.png" alt="双参数扰动下的KL散度比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 从图中可以观察到：
 - 所有比率都小于1，表明不等式在所有测试情况下都成立
