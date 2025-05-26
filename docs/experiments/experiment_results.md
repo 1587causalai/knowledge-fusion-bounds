@@ -28,7 +28,7 @@
 2. 融合分布的KL散度始终小于不等式右侧的值
 3. 随着扰动分布数量N的增加，不等式右侧与左侧的差距越来越大
 
-<img src="docs/assets/position_only_same_direction.png" alt="同向位置参数扰动下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/position_only_same_direction.png" alt="同向位置参数扰动下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ### 2.2 反向扰动
 
@@ -37,7 +37,7 @@
 1. 融合分布的KL散度显著小于不等式右侧的值
 2. 在某些情况下，融合分布的KL散度接近于零，这是因为反向扰动可能导致参数相互抵消
 
-<img src="docs/assets/position_only_opposite_direction.png" alt="反向位置参数扰动下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/position_only_opposite_direction.png" alt="反向位置参数扰动下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ### 2.3 KL散度比率分析
 
@@ -47,7 +47,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 2. 反向扰动下，比率通常远小于1
 3. 位置参数扰动的比率整体低于尺度参数扰动
 
-<img src="docs/assets/position_only_ratio_boxplot.png" alt="位置参数扰动下的KL散度比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/position_only_ratio_boxplot.png" alt="位置参数扰动下的KL散度比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ## 3. 尺度参数扰动实验结果
 
@@ -61,7 +61,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 2. 融合分布的KL散度始终小于不等式右侧的值
 3. 正向和负向的尺度参数扰动对KL散度的影响不对称
 
-<img src="docs/assets/scale_only_same_direction.png" alt="同向尺度参数扰动下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/scale_only_same_direction.png" alt="同向尺度参数扰动下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ### 3.2 反向扰动
 
@@ -70,7 +70,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 1. 融合分布的KL散度显著小于不等式右侧的值
 2. 尺度参数的反向扰动可能导致参数相互抵消，使融合分布的KL散度接近于零
 
-<img src="docs/assets/scale_only_opposite_direction.png" alt="反向尺度参数扰动下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/scale_only_opposite_direction.png" alt="反向尺度参数扰动下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ### 3.3 KL散度比率分析
 
@@ -80,7 +80,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 2. 随着N的增加，比率整体呈下降趋势
 3. 反向扰动下的比率通常小于同向扰动
 
-<img src="docs/assets/scale_only_ratio_boxplot.png" alt="尺度参数扰动下的KL散度比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/scale_only_ratio_boxplot.png" alt="尺度参数扰动下的KL散度比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ## 4. 双参数扰动实验结果
 
@@ -90,7 +90,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 对于N=2的情况，不同位置参数和尺度参数组合下的不等式成立情况如下：
 
-<img src="docs/assets/both_params_same_direction_N2.png" alt="同向双参数扰动下不等式成立情况(N=2)" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/both_params_same_direction_N2.png" alt="同向双参数扰动下不等式成立情况(N=2)" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 从热图可以看出，在所有测试的参数组合下，不等式都成立（值为1.00）。
 
@@ -98,7 +98,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 对于N=2的情况，不同位置参数和尺度参数组合下的不等式成立情况如下：
 
-<img src="docs/assets/both_params_opposite_direction_N2.png" alt="反向双参数扰动下不等式成立情况(N=2)" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/both_params_opposite_direction_N2.png" alt="反向双参数扰动下不等式成立情况(N=2)" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 同样，在所有测试的参数组合下，不等式都成立。
 
@@ -127,7 +127,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 3. 随着N的增加，比率整体呈下降趋势
 4. 特定参数组合（位置参数增大+尺度参数减小）可能导致反例
 
-<img src="docs/assets/both_params_ratio_boxplot.png" alt="双参数扰动下的KL散度比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/both_params_ratio_boxplot.png" alt="双参数扰动下的KL散度比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ## 5. 多维情况实验结果
 
@@ -137,7 +137,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 下图展示了不同维度d和扰动数量N下不等式成立的比例：
 
-<img src="docs/assets/multivariate_inequality_holds.png" alt="多维情况下不等式成立的比例" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/multivariate_inequality_holds.png" alt="多维情况下不等式成立的比例" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 从热图可以看出，在所有测试的维度和扰动数量组合下，不等式都成立（值为1.00）。
 
@@ -149,13 +149,13 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 2. 随着维度d的增加，比率的分布更加集中
 3. 随着扰动数量N的增加，比率整体呈下降趋势
 
-<img src="docs/assets/multivariate_ratio_boxplot.png" alt="多维情况下的KL散度比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/multivariate_ratio_boxplot.png" alt="多维情况下的KL散度比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 ### 5.3 KL散度散点图
 
 下图展示了融合分布KL散度与不等式右侧值的散点图：
 
-<img src="docs/assets/multivariate_scatter.png" alt="KL散度比较散点图" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/multivariate_scatter.png" alt="KL散度比较散点图" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 所有点都位于对角线下方，表明不等式在所有测试情况下都成立。
 
@@ -169,7 +169,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 下图展示了极端位置参数值下的KL散度比较：
 
-<img src="docs/assets/extreme_cases_position.png" alt="极端位置参数值下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/extreme_cases_position.png" alt="极端位置参数值下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 即使在位置参数取极大值的情况下，不等式仍然成立。
 
@@ -177,7 +177,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 下图展示了（调整后的）极端对数尺度参数值下的KL散度比较：
 
-<img src="docs/assets/extreme_cases_scale.png" alt="极端尺度参数值下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/extreme_cases_scale.png" alt="极端尺度参数值下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 同样，在调整后的极端对数尺度参数取值下，不等式也成立。
 
@@ -185,7 +185,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 修正数值溢出问题后，极端情况下的不等式成立比例如下：
 
-<img src="docs/assets/extreme_cases_inequality_holds.png" alt="极端情况下不等式成立的比例" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/extreme_cases_inequality_holds.png" alt="极端情况下不等式成立的比例" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 在所有测试的极端参数值下（包括调整后的对数尺度参数），不等式都成立。
 
@@ -197,7 +197,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 下图展示了不同维度d和扰动数量N下的最大比率：
 
-<img src="docs/assets/optimal_constant_max_ratio.png" alt="不同维度d和扰动数量N下的最大比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/optimal_constant_max_ratio.png" alt="不同维度d和扰动数量N下的最大比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 从热图可以看出，最大比率随着N的增加而减小，这表明原不等式中的常数N可能不是最优的。
 
@@ -205,7 +205,7 @@ KL散度比率（$\frac{D_{KL}(P_0 \| P_{fused})}{N \sum_{k=1}^N D_{KL}(P_0 \| P
 
 下图展示了不同维度d和扰动数量N下的平均比率：
 
-<img src="docs/assets/optimal_constant_mean_ratio.png" alt="不同维度d和扰动数量N下的平均比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="../assets/optimal_constant_mean_ratio.png" alt="不同维度d和扰动数量N下的平均比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 平均比率远小于1，表明不等式在大多数情况下都有较大的余量。
 
