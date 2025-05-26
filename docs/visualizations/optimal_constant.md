@@ -18,7 +18,7 @@ $$ D_{KL}(P_0 \| P_{fused}) \le C \sum_{k=1}^N D_{KL}(P_0 \| P_k) $$
 
 下图展示了不同维度d和扰动数量N下的最大KL散度比率：
 
-<img src="../assets/optimal_constant_max_ratio.png" alt="不同维度d和扰动数量N下的最大比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="docs/assets/optimal_constant_max_ratio.png" alt="不同维度d和扰动数量N下的最大比率">
 
 从热图可以看出：
 - 最大比率随着N的增加而减小
@@ -29,7 +29,7 @@ $$ D_{KL}(P_0 \| P_{fused}) \le C \sum_{k=1}^N D_{KL}(P_0 \| P_k) $$
 
 下图展示了不同维度d和扰动数量N下的平均KL散度比率：
 
-<img src="../assets/optimal_constant_mean_ratio.png" alt="不同维度d和扰动数量N下的平均比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="docs/assets/optimal_constant_mean_ratio.png" alt="不同维度d和扰动数量N下的平均比率">
 
 从热图可以看出：
 - 平均比率远小于1，表明不等式在大多数情况下都有较大的余量
@@ -40,7 +40,7 @@ $$ D_{KL}(P_0 \| P_{fused}) \le C \sum_{k=1}^N D_{KL}(P_0 \| P_k) $$
 
 下图展示了不同维度d和扰动数量N下的95%分位数KL散度比率：
 
-<img src="../assets/optimal_constant_p95_ratio.png" alt="不同维度d和扰动数量N下的95%分位数比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="docs/assets/optimal_constant_p95_ratio.png" alt="不同维度d和扰动数量N下的95%分位数比率">
 
 从热图可以看出：
 - 95%分位数比率也随着N的增加而减小
@@ -54,7 +54,7 @@ $$ C \approx N^a $$
 
 其中a的值约为0.5-0.7。下图展示了这一拟合结果：
 
-<img src="../assets/optimal_constant_estimation.png" alt="最优常数C与扰动数量N的关系" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="docs/assets/optimal_constant_estimation.png" alt="最优常数C与扰动数量N的关系">
 
 从图中可以看出：
 - 最大比率和99%分位数比率都可以用幂函数 $N^a$ 进行良好拟合
