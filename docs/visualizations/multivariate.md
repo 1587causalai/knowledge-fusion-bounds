@@ -6,7 +6,7 @@
 
 下图展示了不同维度d和扰动数量N下不等式成立的比例：
 
-<img src="../assets/multivariate_inequality_holds.png" alt="多维情况下不等式成立的比例" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="docs/assets/multivariate_inequality_holds.png" alt="多维情况下不等式成立的比例" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 从热图可以看出，在所有测试的维度和扰动数量组合下，不等式都成立（值为1.00）。
 
@@ -14,7 +14,7 @@
 
 下图展示了不同维度d下KL散度比率随扰动数量N变化的箱线图：
 
-<img src="../assets/multivariate_ratio_boxplot.png" alt="多维情况下的KL散度比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="docs/assets/multivariate_ratio_boxplot.png" alt="多维情况下的KL散度比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 从图中可以观察到：
 - 所有比率都小于1，表明不等式在所有测试情况下都成立
@@ -25,7 +25,7 @@
 
 下图展示了融合分布KL散度与不等式右侧值的散点图：
 
-<img src="../assets/multivariate_scatter.png" alt="KL散度比较散点图" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="docs/assets/multivariate_scatter.png" alt="KL散度比较散点图" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 从图中可以观察到：
 - 所有点都位于对角线下方，表明不等式在所有测试情况下都成立

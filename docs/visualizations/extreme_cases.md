@@ -6,7 +6,7 @@
 
 下图展示了极端位置参数值下的KL散度比较：
 
-<img src="../assets/extreme_cases_position.png" alt="极端位置参数值下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="docs/assets/extreme_cases_position.png" alt="极端位置参数值下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 从图中可以观察到：
 - 即使在位置参数取极大值（10^2到10^5）的情况下，融合分布的KL散度（实线）仍然小于不等式右侧的值（虚线）
@@ -17,7 +17,7 @@
 
 下图展示了极端尺度参数值下的KL散度比较：
 
-<img src="../assets/extreme_cases_scale.png" alt="极端尺度参数值下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="docs/assets/extreme_cases_scale.png" alt="极端尺度参数值下的KL散度比较" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 从图中可以观察到：
 - 在尺度参数取极大值的情况下，不等式仍然成立
@@ -28,7 +28,7 @@
 
 下图展示了不同N值和参数类型下不等式成立的比例：
 
-<img src="../assets/extreme_cases_inequality_holds.png" alt="极端情况下不等式成立的比例" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="docs/assets/extreme_cases_inequality_holds.png" alt="极端情况下不等式成立的比例" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 从图中可以看出，在所有测试的极端参数值下，不等式都成立（比例为1.00）。
 
@@ -36,7 +36,7 @@
 
 下图展示了不同N值和参数类型下KL散度比率的分布：
 
-<img src="../assets/extreme_cases_ratio_boxplot.png" alt="极端情况下的KL散度比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<img src="docs/assets/extreme_cases_ratio_boxplot.png" alt="极端情况下的KL散度比率" style="max-width: 100%; height: auto; display: block; margin: 20px auto; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
 从图中可以观察到：
 - 所有比率都小于1，表明不等式在所有测试的极端情况下都成立
