@@ -200,6 +200,7 @@ $$D_{KL}(P_0 \| P_{fused}) \le C(N) \sum_{k=1}^N D_{KL}(P_0 \| P_k)$$
 |---------|---------|---------|
 | `kl_divergence_experiments.py` | 全面验证不等式 | 发现双参数扰动反例 |
 | `debug_both_params.py` | 验证特定反例 | 确认反例真实性 |
+| `analyze_counterexample.py` | 特定反例参数分析 | 量化已识别反例的精确比率和特性 |
 | `counterexample_deep_analysis.py` | 反例区域分析 | 发现100%反例区域 |
 | `boundary_analysis.py` | 边界数值分析 | 连接理论与数值 |
 | `test_new_coefficients.py` | 系数鲁棒性测试 | 证明N²和e^N系数有效 |
