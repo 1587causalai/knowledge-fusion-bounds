@@ -163,3 +163,31 @@ $$D_{KL}(P_0 \| P_{i}) \le \epsilon, i=1, 2$$
 这个会非常好的限制 $u_1, u_2$ 的取值范围， 也限制 $x_1, x_2$ 的取值范围。
 
 我们最本质上是想让 $\frac{(1+u_1u_2)^2+(x_1+x_2)^2}{4u_1u_2}$ 被 $C(N) \epsilon$ 控制住
+
+
+## 题目提示词
+
+
+
+**题目描述：**
+
+设 $P_A$ 和 $P_B$ 是两个一维柯西分布，它们的概率密度函数为 $p(x; \mu, \gamma) = \frac{1}{\pi \gamma} \frac{1}{1 + \left(\frac{x-\mu}{\gamma}\right)^2}$，其中 $\mu$ 是位置参数，$\gamma > 0$ 是尺度参数。
+
+两个一维柯西分布 $P_A$ 和 $P_B$ 之间的 Kullback-Leibler (KL) 散度 $D_{KL}(P_A \| P_B)$ 的解析表达式为：
+$$ D_{KL}(P_A \| P_B) = \log\left( \frac{(\gamma_A + \gamma_B)^2 + (\mu_A - \mu_B)^2}{4 \gamma_A \gamma_B} \right) $$
+
+现在考虑一个基准柯西分布 $P_0$，其参数为 $(\mu_0, \gamma_0)$。
+我们引入两个“领域特定”的柯西分布 $P_1$ 和 $P_2$，它们的参数由基准分布 $P_0$ 加上各自的调整量得到。为了简化，我们以对数尺度参数 $s = \log \gamma$ 来表示尺度：
+*   $P_0$ 的参数为 $(\mu_0, s_0)$，其中 $\gamma_0 = e^{s_0}$。
+*   $P_1$ 的参数为 $(\mu_0 + \Delta\mu_1, s_0 + \Delta s_1)$。
+*   $P_2$ 的参数为 $(\mu_0 + \Delta\mu_2, s_0 + \Delta s_2)$。
+
+我们定义一个“融合”分布 $P_{fused}$，其参数通过简单线性叠加各个领域的调整量得到：
+*   融合后的位置参数：$\mu_{fused} = \mu_0 + \Delta\mu_1 + \Delta\mu_2$
+*   融合后的对数尺度参数：$s_{fused} = s_0 + \Delta s_1 + \Delta s_2$
+
+**问题：**
+
+请严格证以下不等式：
+
+$$ D_{KL}(P_0 \| P_{fused}) \le 8 \left( D_{KL}(P_0 \| P_1) + D_{KL}(P_0 \| P_2) \right) $$
